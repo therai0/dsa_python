@@ -31,7 +31,6 @@ class DDL:
         newnode.prev = current_node
         current_node.next = newnode 
 
-
     def display(self):
         if self.head == None:
             print("There is no elements")
@@ -56,7 +55,6 @@ class DDL:
             print(current_node.data,"-->",end="")
             current_node = current_node.prev 
         print("end")
-
 
     def delete_first(self):
         if self.head == None:
@@ -111,7 +109,6 @@ class DDL:
             n -= 1
         print(current_node.data)
 
-    
     def delete_nth_node(self,n:int):
         if self.head == None:
             print("There is no elements in linkedlist")
@@ -131,6 +128,26 @@ class DDL:
             n -= 1
         current_node.next = current_node.next.next 
 
+    def reverse_ll(self):
+        if self.head == None:
+            print("Empty")
+        c_node = self.head
+        prev = None
+        
+        while c_node != None:
+            temp = c_node.next
+            c_node.next = prev 
+            prev = c_node
+            c_node = temp 
+
+        while prev:
+            print(prev.data,"-->",end="")
+            prev = prev.next 
+        print("end")
+        
+
+
+        
         
 
         
@@ -149,14 +166,16 @@ dd.display()
 # dd.delete_last()
 
 # delete the nth node
-dd.delete_nth_node(0)
-dd.delete_nth_node(0)
+# dd.delete_nth_node(0)
+# dd.delete_nth_node(0)
+
+dd.reverse_ll()
 
 # dd.get_nth_node(0)
 # dd.get_nth_node(1)
 # dd.get_nth_node(2)
 
-dd.display()
+# dd.display()
 
 
 
